@@ -1,3 +1,5 @@
+package ArraysLesson2;
+
 import java.util.Arrays;
 import java.util.Random;
 
@@ -29,7 +31,7 @@ import java.util.Random;
  * Оцените сортировку с помощью базового класса System.nanoTime().
  * Сравните с временем выполнения алгоритмов сортировки из прошлых заданий 2.3, 2.4 и 2.5.
  */
-public class Main {
+public class MainArrays {
     public static void main(String[] args) throws InterruptedException {
     int[] myArray = new int[10000];
     int[] myArrayCopy;
@@ -42,14 +44,14 @@ public class Main {
         }
         myArray[9999] = 999; //Сделаем последний элемент таким который мы будем искать,
         // чтобы оценить разницу худшей ситуации в линейном поиске.
-        myArrayCopy = Arrays.copyOf(myArray, myArray.length);
-        myArrayCopy2 = Arrays.copyOf(myArray, myArray.length);
-        myArrayCopy3 = Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy = java.util.Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy2 = java.util.Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy3 = java.util.Arrays.copyOf(myArray, myArray.length);
         //System.out.println(Arrays.toString(myArray));
         //System.out.println(Arrays.equals(myArray, myArrayCopy));
         Thread treadsort = new Thread(()->{
             Long start = System.nanoTime();
-            Arrays.sort(myArrayCopy);
+            java.util.Arrays.sort(myArrayCopy);
             Long end = System.nanoTime();
             System.out.println("Сортировка методом sort() заняло " + ((double)(end - start)*0.000001) + " миллисекунд");
             System.out.println("=======================================================");
