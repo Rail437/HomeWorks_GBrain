@@ -44,14 +44,14 @@ public class MainArrays {
         }
         myArray[9999] = 999; //Сделаем последний элемент таким который мы будем искать,
         // чтобы оценить разницу худшей ситуации в линейном поиске.
-        myArrayCopy = java.util.Arrays.copyOf(myArray, myArray.length);
-        myArrayCopy2 = java.util.Arrays.copyOf(myArray, myArray.length);
-        myArrayCopy3 = java.util.Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy = Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy2 = Arrays.copyOf(myArray, myArray.length);
+        myArrayCopy3 = Arrays.copyOf(myArray, myArray.length);
         //System.out.println(Arrays.toString(myArray));
         //System.out.println(Arrays.equals(myArray, myArrayCopy));
         Thread treadsort = new Thread(()->{
             Long start = System.nanoTime();
-            java.util.Arrays.sort(myArrayCopy);
+            Arrays.sort(myArrayCopy);
             Long end = System.nanoTime();
             System.out.println("Сортировка методом sort() заняло " + ((double)(end - start)*0.000001) + " миллисекунд");
             System.out.println("=======================================================");
